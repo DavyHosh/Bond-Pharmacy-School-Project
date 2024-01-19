@@ -15,14 +15,14 @@ Welcome to the Bond Pharmacy School Project! This project was aimed at assesing 
 
 ## About
 
-The Bond Pharmacy School Project is a [responsive/web-based/etc.] platform created for [provide details about the intended users, purpose, and goals of the project]. It aims to [briefly describe the key objectives].
+The Bond Pharmacy School Project is a web-based platform created for Bond Pharmacy staff. It aims to lighten work and bring efficiency to pharmaceutical activities.
 
 ## Features
 
-- **User-friendly Interface:** [Describe the design and navigation principles followed for a user-friendly experience].
-- **Pharmacy Information:** [Provide detailed information about the pharmacy school, courses, faculty, etc.].
-- **Interactive Features:** [Highlight any interactive features or functionalities implemented].
-- **Responsive Design:** Utilizes [mention any framework or technology] for a responsive and accessible layout.
+- User-friendly Interface.
+- Pharmacy Information.
+- Interactive Features.
+- Responsive Design.
 
 ## Built With
 
