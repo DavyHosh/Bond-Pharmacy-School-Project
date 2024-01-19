@@ -1,0 +1,15 @@
+ALTER TABLE `nsp`.`orders` 
+CHANGE COLUMN `title` `titles` VARCHAR(45) NOT NULL ;
+
+
+
+ALTER TABLE `nsp`.`orders` 
+DROP FOREIGN KEY `FK_ProductId`;
+ALTER TABLE `nsp`.`orders` 
+CHANGE COLUMN `productId` `productId` INT(40) NOT NULL ;
+ALTER TABLE `nsp`.`orders` 
+ADD CONSTRAINT `FK_ProductId`
+  FOREIGN KEY (`productId`)
+  REFERENCES `nsp`.`products` (`id`)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE;

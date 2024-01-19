@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <%- include ("partials/head.ejs") %>
+  </head>
+  
+  <body>
+  
+    <div class="site-wrap">
+  
+      <%- include ("partials/header.ejs") %>
+
+    <div class="bg-light py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mb-0"><a href="/customer/index">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Store</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section">
+      <div class="container">
+    
+      <div class="row">
+
+        <% allProducts.forEach(function(item) { %>
+          <div class="col-lg-3">
+            <div class="card" style="height: 100%;">
+              <a href="/customer/<%= item.id %>/product">
+                  <img class="" src="/uploads/<%= item.filename %>" width="100%" height="150px">
+              </a>
+              <div class="card-body">
+                <span class="card-text"><a href="/customer/<%= item.id %>/product"><%= item.title %></a></span><br>
+                <div class="row">
+                  <div class="col-md 6"><h5 class="card-title"><b>Kshs. <%= item.price %></b></h5></div>
+                  <div class="col-md 6" style="text-align: right;"><a href="/customer/<%= item.id %>/place_order"><i  style="color: rgb(20, 20, 121);" class="icon-shopping-cart"></i></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% }); %>
+
+      </div>
+
+      </div>
+    </div>
+
+
+    <div class="bg-primary">
+      <%- include ("partials/footer.ejs") %>
+  </div>
+  </div>
+
+  <script src="/js/jquery-3.3.1.min.js"></script>
+  <script src="/js/jquery-ui.js"></script>
+  <script src="/js/popper.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/owl.carousel.min.js"></script>
+  <script src="/js/jquery.magnific-popup.min.js"></script>
+  <script src="/js/aos.js"></script>
+
+  <script src="/js/main.js"></script>
+
+</body>
+
+</html>

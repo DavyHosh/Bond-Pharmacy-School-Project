@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include ("partials/head.ejs") %>
+  </head>
+  <body>
+    <%- include ("partials/nav.ejs") %>
+
+    <header id="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10">
+            <h1><span class="glyphicon glyphicon-user" aria-hidden="true"></span> User <small>View User</small></h1>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="breadcrumb">
+      <div class="container">
+        <ol class="breadcrumb">
+          <li><a href="/admin/index">Dashboard</a></li>
+          <li><a href="/admin/users">Users</a></li>
+          <li class="active">Jill Smith</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="main">
+      <div class="container">
+        <div class="row">
+          
+          <%- include ("partials/sidebar.ejs") %>
+          
+          <div class="col-md-9">
+            <!-- Website Overview-->
+            <div class="panel panel-default">
+              <div class="panel-heading main-color-bg">
+                <h3 class="panel-title">View User</h3>
+              </div>
+              <div class="panel-body">
+
+                <div class="row">
+                  <div class="col-md-4">
+                    <img class="media-object" src="..." alt="" width="200px" height="200px">
+                  </div>
+                  <div class="col-md-8">
+                    <h4 class="media-heading"style="color: gray;">Jill Smith</h4>
+                    <h5>Email: <a href="mailto:email@email.com">email@email.com</a></h5>
+                    <h5>Phone: <a href="tel:+2547123456789">+2547123456789</a></h5>
+                    <h5>Role: Supplier</h5>
+                    <br>
+                    <h5>Product: Bioderma</h5>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <%- include ("partials/footer.ejs") %>
+
+</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>

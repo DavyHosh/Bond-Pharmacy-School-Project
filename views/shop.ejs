@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <%- include ("partials/head.ejs") %>
+  </head>
+  
+  <body>
+  
+    <div class="site-wrap">
+  
+      <%- include ("partials/header.ejs") %>
+
+    <div class="bg-light py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mb-0"><a href="/">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Store</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section">
+      <div class="container">
+    
+      <div class="row">
+        <% allProducts.forEach(function(item) { %>
+          <div class="col-lg-3">
+            <div class="card" style="height: 100%;">
+              <a href="/<%= item.id %>/product">
+                  <img class="" src="/uploads/<%= item.filename %>" width="100%" height="150px">
+              </a>
+              <div class="card-body">
+                <span class="card-text"><a href="/<%= item.id %>/product"><%= item.title %></a></span><br>
+                <div class="row">
+                  <div class="col-md 6"><h5 class="card-title"><b>Ksh. <%= item.price %></b></h5></div>
+                  <div class="col-md 6" style="text-align: right;"><a href="/customer_login"><i  style="color: rgb(20, 20, 121);" class="icon-shopping-cart"></i></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+        <!-- <div class="col-lg-3">
+            <div class="card" style="height: 100%;">
+              <a href="/2/product">
+                  <img class="" src="/uploads/<%= item.filename %>" width="100%" height="150px">
+              </a>
+              <div class="card-body">
+                <span class="card-text"><a href="/2/product"><%= item.title %></a></span><br>
+                <div class="row">
+                  <div class="col-md 6"><h5 class="card-title"><b>Ksh. <%= item.price %></b></h5></div>
+                  <div class="col-md 6" style="text-align: right;"><a href="/customer_login"><i  style="color: rgb(20, 20, 121);" class="icon-shopping-cart"></i></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+           <div class="col-lg-3">
+            <div class="card" style="height: 100%;">
+              <a href="/3/product">
+                  <img class="" src="/uploads/<%= item.filename %>" width="100%" height="150px">
+              </a>
+              <div class="card-body">
+                <span class="card-text"><a href="/3/product"><%= item.title %></a></span><br>
+                <div class="row">
+                  <div class="col-md 6"><h5 class="card-title"><b>Ksh. <%= item.price %></b></h5></div>
+                  <div class="col-md 6" style="text-align: right;"><a href="/customer_login"><i  style="color: rgb(20, 20, 121);" class="icon-shopping-cart"></i></a></div>
+                </div>
+              </div>
+            </div>
+          </div>  
+  
+          <div class="col-lg-3">
+            <div class="card" style="height: 100%;">
+              <a href="/4/product">
+                  <img class="" src="/uploads/<%= item.filename %>" width="100%" height="150px">
+              </a>
+              <div class="card-body">
+                <span class="card-text"><a href="/4/product"><%= item.title %></a></span><br>
+                <div class="row">
+                  <div class="col-md 6"><h5 class="card-title"><b>Ksh. <%= item.price %></b></h5></div>
+                  <div class="col-md 6" style="text-align: right;"><a href="/customer_login"><i  style="color: rgb(20, 20, 121);" class="icon-shopping-cart"></i></a></div>
+                </div>
+              </div>
+            </div>
+          </div> 
+  
+          <div class="col-lg-3">
+            <div class="card" style="height: 100%;">
+              <a href="/5/product">
+                  <img class="" src="/uploads/<%= item.filename %>" width="100%" height="150px">
+              </a>
+              <div class="card-body">
+                <span class="card-text"><a href="/5/product"><%= item.title %></a></span><br>
+                <div class="row">
+                  <div class="col-md 6"><h5 class="card-title"><b>Ksh. <%= item.price %></b></h5></div>
+                  <div class="col-md 6" style="text-align: right;"><a href="/customer_login"><i  style="color: rgb(20, 20, 121);" class="icon-shopping-cart"></i></a></div>
+                </div>
+              </div>
+            </div>
+          </div> 
+  
+             <div class="col-lg-3">
+            <div class="card" style="height: 100%;">
+              <a href="/6/product">
+                  <img class="" src="/uploads/<%= item.filename %>" width="100%" height="150px">
+              </a>
+              <div class="card-body">
+                <span class="card-text"><a href="/6/product"><%= item.title %></a></span><br>
+                <div class="row">
+                  <div class="col-md 6"><h5 class="card-title"><b>Ksh. <%= item.price %></b></h5></div>
+                  <div class="col-md 6" style="text-align: right;"><a href="/customer_login"><i  style="color: rgb(20, 20, 121);" class="icon-shopping-cart"></i></a></div>
+                </div>
+              </div>
+            </div>
+          </div>   
+  
+            <div class="col-lg-3">
+            <div class="card" style="height: 100%;">
+              <a href="/7/product">
+                  <img class="" src="/uploads/<%= item.filename %>" width="100%" height="150px">
+              </a>
+              <div class="card-body">
+                <span class="card-text"><a href="/7/product"><%= item.title %></a></span><br>
+                <div class="row">
+                  <div class="col-md 6"><h5 class="card-title"><b>Ksh. <%= item.price %></b></h5></div>
+                  <div class="col-md 6" style="text-align: right;"><a href="/customer_login"><i  style="color: rgb(20, 20, 121);" class="icon-shopping-cart"></i></a></div>
+                </div>
+              </div>
+            </div>
+          </div> 
+  
+             <div class="col-lg-3">
+            <div class="card" style="height: 100%;">
+              <a href="/8/product">
+                  <img class="" src="/uploads/<%= item.filename %>" width="100%" height="150px">
+              </a>
+              <div class="card-body">
+                <span class="card-text"><a href="/8/product"><%= item.title %></a></span><br>
+                <div class="row">
+                  <div class="col-md 6"><h5 class="card-title"><b>Ksh. <%= item.price %></b></h5></div>
+                  <div class="col-md 6" style="text-align: right;"><a href="/customer_login"><i  style="color: rgb(20, 20, 121);" class="icon-shopping-cart"></i></a></div>
+                </div>
+              </div>
+            </div>
+          </div>  
+  
+            <div class="col-lg-3">
+            <div class="card" style="height: 100%;">
+              <a href="/9/product">
+                  <img class="" src="/uploads/<%= item.filename %>" width="100%" height="150px">
+              </a>
+              <div class="card-body">
+                <span class="card-text"><a href="/9/product"><%= item.title %></a></span><br>
+                <div class="row">
+                  <div class="col-md 6"><h5 class="card-title"><b>Ksh. <%= item.price %></b></h5></div>
+                  <div class="col-md 6" style="text-align: right;"><a href="/customer_login"><i  style="color: rgb(20, 20, 121);" class="icon-shopping-cart"></i></a></div>
+                </div>
+              </div>
+            </div>
+          </div>    
+  
+           <div class="col-lg-3">
+            <div class="card" style="height: 100%;">
+              <a href="/10/product">
+                  <img class="" src="/uploads/<%= item.filename %>" width="100%" height="150px">
+              </a>
+              <div class="card-body">
+                <span class="card-text"><a href="/10/product"><%= item.title %></a></span><br>
+                <div class="row">
+                  <div class="col-md 6"><h5 class="card-title"><b>Ksh. <%= item.price %></b></h5></div>
+                  <div class="col-md 6" style="text-align: right;"><a href="/customer_login"><i  style="color: rgb(20, 20, 121);" class="icon-shopping-cart"></i></a></div>
+                </div>
+              </div>
+            </div>
+          </div>   
+  
+          <div class="col-lg-3">
+            <div class="card" style="height: 100%;">
+              <a href="/11/product">
+                  <img class="" src="/uploads/<%= item.filename %>" width="100%" height="150px">
+              </a>
+              <div class="card-body">
+                <span class="card-text"><a href="/11/product"><%= item.title %></a></span><br>
+                <div class="row">
+                  <div class="col-md 6"><h5 class="card-title"><b>Ksh. <%= item.price %></b></h5></div>
+                  <div class="col-md 6" style="text-align: right;"><a href="/customer_login"><i  style="color: rgb(20, 20, 121);" class="icon-shopping-cart"></i></a></div>
+                </div>
+              </div>
+            </div>
+          </div>  
+  
+         <div class="col-lg-3">
+            <div class="card" style="height: 100%;">
+              <a href="/12/product">
+                  <img class="" src="/uploads/<%= item.filename %>" width="100%" height="150px">
+              </a>
+              <div class="card-body">
+                <span class="card-text"><a href="/12/product"><%= item.title %></a></span><br>
+                <div class="row">
+                  <div class="col-md 6"><h5 class="card-title"><b>Ksh. <%= item.price %></b></h5></div>
+                  <div class="col-md 6" style="text-align: right;"><a href="/customer_login"><i  style="color: rgb(20, 20, 121);" class="icon-shopping-cart"></i></a></div>
+                </div>
+              </div>
+            </div>
+          </div> 
+  
+           <div class="col-lg-3">
+            <div class="card" style="height: 100%;">
+              <a href="/13/product">
+                  <img class="" src="/uploads/<%= item.filename %>" width="100%" height="150px">
+              </a>
+              <div class="card-body">
+                <span class="card-text"><a href="/13/product"><%= item.title %></a></span><br>
+                <div class="row">
+                  <div class="col-md 6"><h5 class="card-title"><b>Ksh. <%= item.price %></b></h5></div>
+                  <div class="col-md 6" style="text-align: right;"><a href="/customer_login"><i  style="color: rgb(20, 20, 121);" class="icon-shopping-cart"></i></a></div>
+                </div>
+              </div>
+            </div>
+          </div>  
+  
+           <div class="col-lg-3">
+            <div class="card" style="height: 100%;">
+              <a href="/14/product">
+                  <img class="" src="/uploads/<%= item.filename %>" width="100%" height="150px">
+              </a>
+              <div class="card-body">
+                <span class="card-text"><a href="/14/product"><%= item.title %></a></span><br>
+                <div class="row">
+                  <div class="col-md 6"><h5 class="card-title"><b>Ksh. <%= item.price %></b></h5></div>
+                  <div class="col-md 6" style="text-align: right;"><a href="/customer_login"><i  style="color: rgb(20, 20, 121);" class="icon-shopping-cart"></i></a></div>
+                </div>
+              </div>
+            </div>
+          </div> 
+  
+           <div class="col-lg-3">
+            <div class="card" style="height: 100%;">
+              <a href="/15/product">
+                  <img class="" src="/uploads/<%= item.filename %>" width="100%" height="150px">
+              </a>
+              <div class="card-body">
+                <span class="card-text"><a href="/15/product"><%= item.title %></a></span><br>
+                <div class="row">
+                  <div class="col-md 6"><h5 class="card-title"><b>Ksh. <%= item.price %></b></h5></div>
+                  <div class="col-md 6" style="text-align: right;"><a href="/customer_login"><i  style="color: rgb(20, 20, 121);" class="icon-shopping-cart"></i></a></div>
+                </div>
+              </div>
+            </div>
+          </div> 
+   
+  
+           <div class="col-lg-3">
+            <div class="card" style="height: 100%;">
+              <a href="/16/product">
+                  <img class="" src="/uploads/<%= item.filename %>" width="100%" height="150px">
+              </a>
+              <div class="card-body">
+                <span class="card-text"><a href="/16/product"><%= item.title %></a></span><br>
+                <div class="row">
+                  <div class="col-md 6"><h5 class="card-title"><b>Ksh. <%= item.price %></b></h5></div>
+                  <div class="col-md 6" style="text-align: right;"><a href="/customer_login"><i  style="color: rgb(20, 20, 121);" class="icon-shopping-cart"></i></a></div>
+                </div>
+              </div>
+            </div>
+          </div>  
+  
+           <div class="col-lg-3">
+            <div class="card" style="height: 100%;">
+              <a href="/17/product">
+                  <img class="" src="/uploads/<%= item.filename %>" width="100%" height="150px">
+              </a>
+              <div class="card-body">
+                <span class="card-text"><a href="/17/product"><%= item.title %></a></span><br>
+                <div class="row">
+                  <div class="col-md 6"><h5 class="card-title"><b>Ksh. <%= item.price %></b></h5></div>
+                  <div class="col-md 6" style="text-align: right;"><a href="/customer_login"><i  style="color: rgb(20, 20, 121);" class="icon-shopping-cart"></i></a></div>
+                </div>
+              </div>
+            </div>
+          </div>   
+  
+        <div class="col-lg-3">
+            <div class="card" style="height: 100%;">
+              <a href="/18/product">
+                  <img class="" src="/uploads/<%= item.filename %>" width="100%" height="150px">
+              </a>
+              <div class="card-body">
+                <span class="card-text"><a href="/18/product"><%= item.title %></a></span><br>
+                <div class="row">
+                  <div class="col-md 6"><h5 class="card-title"><b>Ksh. <%= item.price %></b></h5></div>
+                  <div class="col-md 6" style="text-align: right;"><a href="/customer_login"><i  style="color: rgb(20, 20, 121);" class="icon-shopping-cart"></i></a></div>
+                </div>
+              </div>
+            </div>
+          </div>  
+  
+          <div class="col-lg-3">
+            <div class="card" style="height: 100%;">
+              <a href="/19/product">
+                  <img class="" src="/uploads/<%= item.filename %>" width="100%" height="150px">
+              </a>
+              <div class="card-body">
+                <span class="card-text"><a href="/19/product"><%= item.title %></a></span><br>
+                <div class="row">
+                  <div class="col-md 6"><h5 class="card-title"><b>Ksh. <%= item.price %></b></h5></div>
+                  <div class="col-md 6" style="text-align: right;"><a href="/customer_login"><i  style="color: rgb(20, 20, 121);" class="icon-shopping-cart"></i></a></div>
+                </div>
+              </div>
+            </div>
+          </div>  
+  
+          <div class="col-lg-3">
+            <div class="card" style="height: 100%;">
+              <a href="/20/product">
+                  <img class="" src="/uploads/<%= item.filename %>" width="100%" height="150px">
+              </a>
+              <div class="card-body">
+                <span class="card-text"><a href="/20/product"><%= item.title %></a></span><br>
+                <div class="row">
+                  <div class="col-md 6"><h5 class="card-title"><b>Ksh. <%= item.price %></b></h5></div>
+                  <div class="col-md 6" style="text-align: right;"><a href="/customer_login"><i  style="color: rgb(20, 20, 121);" class="icon-shopping-cart"></i></a></div>
+                </div>
+              </div>
+            </div>
+          </div> 
+  
+        <div class="col-lg-3">
+            <div class="card" style="height: 100%;">
+              <a href="/21/product">
+                  <img class="" src="/uploads/<%= item.filename %>" width="100%" height="150px">
+              </a>
+              <div class="card-body">
+                <span class="card-text"><a href="/21/product"><%= item.title %></a></span><br>
+                <div class="row">
+                  <div class="col-md 6"><h5 class="card-title"><b>Ksh. <%= item.price %></b></h5></div>
+                  <div class="col-md 6" style="text-align: right;"><a href="/customer_login"><i  style="color: rgb(20, 20, 121);" class="icon-shopping-cart"></i></a></div>
+                </div>
+              </div>
+            </div>
+          </div>   
+  
+          <div class="col-lg-3">
+            <div class="card" style="height: 100%;">
+              <a href="/22/product">
+                  <img class="" src="/uploads/<%= item.filename %>" width="100%" height="150px">
+              </a>
+              <div class="card-body">
+                <span class="card-text"><a href="/22/product"><%= item.title %></a></span><br>
+                <div class="row">
+                  <div class="col-md 6"><h5 class="card-title"><b>Ksh. <%= item.price %></b></h5></div>
+                  <div class="col-md 6" style="text-align: right;"><a href="/customer_login"><i  style="color: rgb(20, 20, 121);" class="icon-shopping-cart"></i></a></div>
+                </div>
+              </div>
+            </div>
+          </div>  
+  
+            <div class="col-lg-3">
+            <div class="card" style="height: 100%;">
+              <a href="/23/product">
+                  <img class="" src="/uploads/<%= item.filename %>" width="100%" height="150px">
+              </a>
+              <div class="card-body">
+                <span class="card-text"><a href="/23/product"><%= item.title %></a></span><br>
+                <div class="row">
+                  <div class="col-md 6"><h5 class="card-title"><b>Ksh. <%= item.price %></b></h5></div>
+                  <div class="col-md 6" style="text-align: right;"><a href="/customer_login"><i  style="color: rgb(20, 20, 121);" class="icon-shopping-cart"></i></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+            <div class="col-lg-3">
+            <div class="card" style="height: 100%;">
+              <a href="/24/product">
+                  <img class="" src="/uploads/<%= item.filename %>" width="100%" height="150px">
+              </a>
+              <div class="card-body">
+                <span class="card-text"><a href="/24/product"><%= item.title %></a></span><br>
+                <div class="row">
+                  <div class="col-md 6"><h5 class="card-title"><b>Ksh. <%= item.price %></b></h5></div>
+                  <div class="col-md 6" style="text-align: right;"><a href="/customer_login"><i  style="color: rgb(20, 20, 121);" class="icon-shopping-cart"></i></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+            <div class="col-lg-3">
+            <div class="card" style="height: 100%;">
+              <a href="/25/product">
+                  <img class="" src="/uploads/<%= item.filename %>" width="100%" height="150px">
+              </a>
+              <div class="card-body">
+                <span class="card-text"><a href="/25/product"><%= item.title %></a></span><br>
+                <div class="row">
+                  <div class="col-md 6"><h5 class="card-title"><b>Ksh. <%= item.price %></b></h5></div>
+                  <div class="col-md 6" style="text-align: right;"><a href="/customer_login"><i  style="color: rgb(20, 20, 121);" class="icon-shopping-cart"></i></a></div>
+                </div>
+              </div>
+            </div>
+          </div>  
+  
+            <div class="col-lg-3">
+            <div class="card" style="height: 100%;">
+              <a href="/26/product">
+                  <img class="" src="/uploads/<%= item.filename %>" width="100%" height="150px">
+              </a>
+              <div class="card-body">
+                <span class="card-text"><a href="/26/product"><%= item.title %></a></span><br>
+                <div class="row">
+                  <div class="col-md 6"><h5 class="card-title"><b>Ksh. <%= item.price %></b></h5></div>
+                  <div class="col-md 6" style="text-align: right;"><a href="/customer_login"><i  style="color: rgb(20, 20, 121);" class="icon-shopping-cart"></i></a></div>
+                </div>
+              </div>
+            </div>
+          </div> 
+  
+            <div class="col-lg-3">
+            <div class="card" style="height: 100%;">
+              <a href="/27/product">
+                  <img class="" src="/uploads/<%= item.filename %>" width="100%" height="150px">
+              </a>
+              <div class="card-body">
+                <span class="card-text"><a href="/27/product"><%= item.title %></a></span><br>
+                <div class="row">
+                  <div class="col-md 6"><h5 class="card-title"><b>Ksh. <%= item.price %></b></h5></div>
+                  <div class="col-md 6" style="text-align: right;"><a href="/customer_login"><i  style="color: rgb(20, 20, 121);" class="icon-shopping-cart"></i></a></div>
+                </div>
+              </div>
+            </div>
+          </div>  
+  
+            <div class="col-lg-3">
+            <div class="card" style="height: 100%;">
+              <a href="/28/product">
+                  <img class="" src="/uploads/<%= item.filename %>" width="100%" height="150px">
+              </a>
+              <div class="card-body">
+                <span class="card-text"><a href="/28/product"><%= item.title %></a></span><br>
+                <div class="row">
+                  <div class="col-md 6"><h5 class="card-title"><b>Ksh. <%= item.price %></b></h5></div>
+                  <div class="col-md 6" style="text-align: right;"><a href="/customer_login"><i  style="color: rgb(20, 20, 121);" class="icon-shopping-cart"></i></a></div>
+                </div>
+              </div>
+            </div>
+          </div> 
+  
+            <div class="col-lg-3">
+            <div class="card" style="height: 100%;">
+              <a href="/29/product">
+                  <img class="" src="/uploads/<%= item.filename %>" width="100%" height="150px">
+              </a>
+              <div class="card-body">
+                <span class="card-text"><a href="/29/product"><%= item.title %></a></span><br>
+                <div class="row">
+                  <div class="col-md 6"><h5 class="card-title"><b>Ksh. <%= item.price %></b></h5></div>
+                  <div class="col-md 6" style="text-align: right;"><a href="/customer_login"><i  style="color: rgb(20, 20, 121);" class="icon-shopping-cart"></i></a></div>
+                </div>
+              </div>
+            </div>
+          </div>  
+  
+          <div class="col-lg-3">
+            <div class="card" style="height: 100%;">
+              <a href="/30/product">
+                  <img class="" src="/uploads/<%= item.filename %>" width="100%" height="150px">
+              </a>
+              <div class="card-body">
+                <span class="card-text"><a href="/30/product"><%= item.title %></a></span><br>
+                <div class="row">
+                  <div class="col-md 6"><h5 class="card-title"><b>Ksh. <%= item.price %></b></h5></div>
+                  <div class="col-md 6" style="text-align: right;"><a href="/customer_login"><i  style="color: rgb(20, 20, 121);" class="icon-shopping-cart"></i></a></div>
+                </div>
+              </div>
+            </div>
+          </div>  
+  
+            <div class="col-lg-3">
+            <div class="card" style="height: 100%;">
+              <a href="/31/product">
+                  <img class="" src="/uploads/<%= item.filename %>" width="100%" height="150px">
+              </a>
+              <div class="card-body">
+                <span class="card-text"><a href="/31/product"><%= item.title %></a></span><br>
+                <div class="row">
+                  <div class="col-md 6"><h5 class="card-title"><b>Ksh. <%= item.price %></b></h5></div>
+                  <div class="col-md 6" style="text-align: right;"><a href="/customer_login"><i  style="color: rgb(20, 20, 121);" class="icon-shopping-cart"></i></a></div>
+                </div>
+              </div>
+            </div>
+          </div>  
+  
+          <div class="col-lg-3">
+            <div class="card" style="height: 100%;">
+              <a href="/32/product">
+                  <img class="" src="/uploads/<%= item.filename %>" width="100%" height="150px">
+              </a>
+              <div class="card-body">
+                <span class="card-text"><a href="/32/product"><%= item.title %></a></span><br>
+                <div class="row">
+                  <div class="col-md 6"><h5 class="card-title"><b>Ksh. <%= item.price %></b></h5></div>
+                  <div class="col-md 6" style="text-align: right;"><a href="/customer_login"><i  style="color: rgb(20, 20, 121);" class="icon-shopping-cart"></i></a></div>
+                </div>
+              </div>
+            </div>
+          </div>   -->
+          <% }); %>
+  
+        </div>
+  
+        </div>
+      </div>
+      
+
+<br>
+  <div class="bg-primary">
+      <%- include ("partials/footer.ejs") %>
+  </div>
+  </div>
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

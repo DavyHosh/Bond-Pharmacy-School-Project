@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <%- include ("partials/head.ejs") %>
+    <style>
+        .jumbotron {
+            width: 50%;
+        }
+        @media (max-width: 991px) {
+            .jumbotron {
+            width: 100%;
+        }
+        }
+    </style>
+  </head>
+  
+  <body>
+  
+    <div class="site-wrap">
+  
+      <%- include ("partials/header.ejs") %>
+
+    <div class="bg-light py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mb-0">
+            <a href="/">Home</a> <span class="mx-2 mb-0">/</span>
+            <strong class="text-black">Register Account</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <!-- <div class="col-md-12">
+            <h2 class="h3 mb-5 text-black">Log In</h2>
+          </div> -->
+          <div class="col-md-12">
+            <div class="jumbotron">
+                <form action="/customer_signup" method="post">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">First Name</label>
+                                <input name="fname" type="text" class="form-control" placeholder="First Name">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Last Name</label>
+                                <input name="lname" type="text" class="form-control" placeholder="Last Name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input name="username" type="email" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Phone Number</label>
+                      <input name="phone" type="number" class="form-control" placeholder="Phone number">
+                  </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input name="password" type="password" class="form-control" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+            </div>
+            
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="bg-primary">
+      <%- include ("partials/footer.ejs") %>
+  </div>
+
+  </div>
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

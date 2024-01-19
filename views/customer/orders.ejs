@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <%- include ("partials/head.ejs") %>
+  </head>
+  
+  <body>
+  
+    <div class="site-wrap">
+  
+      <%- include ("partials/header.ejs") %>
+
+    <div class="bg-light py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mb-0"><a href="/customer/index">Home</a> <span class="mx-2 mb-0">/</span> <strong
+              class="text-black">Thank You</strong></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <span class="icon-check_circle display-3 text-success"></span>
+            <!-- <h2 class="display-3 text-black">Thank you!</h2>
+            <p class="lead mb-5">You order was successfuly completed.</p> -->
+
+            <!-- Table Orders -->
+            <h4>Orders</h4>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Batch Id</th>
+                  <th scope="col">Image</th>
+                  <th scope="col">Title</th>
+                  <th scope="col">Amount</th>
+                  <th scope="col">Date</th>
+                  <th scope="col">Receipt</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                <% allOrders.forEach(function(item) { %>
+                <tr>
+                  <th scope="row"><%= item.id %></th>
+                  <td><img src="/uploads/<%= item.filename %>" alt="" width="100px" height="100px"></td>
+                  <td><%= item.title %></td>
+                  <td><%= item.amount %></td>
+                  <td><%= item.date.toDateString() %></td>
+                  <td><a href="/customer/<%= item.id %>/receipt" class="btn btn-md height-auto px-4 py-3 btn-primary">View receipt</a></td>
+                </tr>
+                <% }); %>
+
+              </tbody>
+            </table>
+
+            <p><a href="/customer/shop" class="btn btn-md height-auto px-4 py-3 btn-primary">Back to store</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="bg-primary">
+      <%- include ("partials/footer.ejs") %>
+  </div>
+  </div>
+
+  <script src="/js/jquery-3.3.1.min.js"></script>
+  <script src="/js/jquery-ui.js"></script>
+  <script src="/js/popper.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/owl.carousel.min.js"></script>
+  <script src="/js/jquery.magnific-popup.min.js"></script>
+  <script src="/js/aos.js"></script>
+
+  <script src="/js/main.js"></script>
+
+</body>
+
+</html>

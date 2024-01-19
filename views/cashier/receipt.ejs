@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <%- include ("partials/head.ejs") %>
+  </head>
+
+  <style>
+    .jumbotron {
+      width: 50%;
+    }
+    @media (max-width: 991px) {
+      .jumbotron {
+        width: 100%;
+      }
+    }
+  </style>
+  
+  <body>
+  
+    <div class="site-wrap">
+  
+      <%- include ("partials/header.ejs") %>
+
+    <div class="bg-light py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mb-0"><a href="/customer/index">Home</a> <span class="mx-2 mb-0">/</span> <strong
+              class="text-black">Receipt</strong></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="site-section">
+      <div class="container">
+        <div class="jumbotron">
+
+          <h1 style="text-align: center;color: rgb(9, 17, 107);"> Bond Pharmacy</h1>
+          <h3 style="text-align: center;"> Receipt</h3>
+
+          <div class="row">
+            <div class="col-md-6">No. <%= order.id %></div>
+            <div class="col-md-6" style="text-align: right;">Date: <%= order.date.toDateString() %></div>
+          </div>
+          
+          <hr>
+          <h6><b>Received from:</b> <%= order.supplier %></h6>
+          <h6><b>Product Delivered:</b> <%= order.title %></h6>
+          <hr>
+          Payment = Kshs. <%= order.amount %>.00
+          <hr>
+          
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="bg-primary">
+      <%- include ("partials/footer.ejs") %>
+    </div>
+  </div>
+
+  <script src="/js/jquery-3.3.1.min.js"></script>
+  <script src="/js/jquery-ui.js"></script>
+  <script src="/js/popper.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/owl.carousel.min.js"></script>
+  <script src="/js/jquery.magnific-popup.min.js"></script>
+  <script src="/js/aos.js"></script>
+
+  <script src="/js/main.js"></script>
+
+</body>
+
+</html>

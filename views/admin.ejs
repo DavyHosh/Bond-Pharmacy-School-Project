@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Bond Pharmacy</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,700|Crimson+Text:400,400i" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+  
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  
+  
+    <link rel="stylesheet" href="css/aos.css">
+  
+    <link rel="stylesheet" href="css/style.css">
+  
+    <style>
+      .shorte {
+          display: none;
+          visibility: none;
+      }
+      .jumbotron {
+            width: 40%;
+        }
+      @media (max-width: 991px) {
+        .longe {
+          display: none;
+        }
+        .shorte {
+          /* display: unset; */
+          visibility: visible;
+        }
+        .jumbotron {
+            width: 100%;
+        }
+      }
+  </style>
+  </head>
+  
+  <body>
+  
+<div class="site-wrap">
+  
+  <div class="site-navbar py-2">
+
+    <div class="search-wrap">
+      <div class="container">
+        <a href="#" class="search-close js-search-close"><span class="icon-close2"></span></a>
+        <form action="#" method="post">
+          <input type="text" class="form-control" placeholder="Search keyword and hit enter...">
+        </form>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="logo">
+          <div class="site-logo">
+            <a href="/" class="js-logo-clone">BOND</a>
+          </div>
+        </div>
+        <div class="main-nav d-none d-lg-block">
+          <nav class="site-navigation text-right text-md-center" role="navigation">
+            <ul class="site-menu js-clone-nav d-none d-lg-block">
+              <li class=""><a href="/">Home</a></li>
+              <li><a href="shop">Store</a></li>
+              <li><a href="about">About</a></li>
+              <li><a href="contact">Contact</a></li>
+              <div class="shorte">
+                <ul class="site-menu js-clone-nav d-none d-lg-block">
+                  <li class="shorte"><a href="signup">Sign Up</a></li>
+                  <li class=" shorte has-children">
+                    <a href="#">Log In</a>
+                    <ul class="dropdown">
+                      <li><a href="/customer_login">Buyer</a></li>
+                      <li><a href="/supplier_login">Supplier</a></li>
+                      <li><a href="/cashier_login">Cashier</a></li>
+                      
+                    </ul>
+                  </li>
+                  <!-- <li class=""><a href="login">Log In</a></li> -->
+              </ul>
+              </div>
+            </ul>
+          </nav>
+        </div>
+        <div class="icons">
+          <a href="#" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
+
+          <div class="d-inline-block bag">
+            <a class="longe" href="signup"><input type="submit" class="btn btn-black" value="Sign Up"></a>
+            <a class="longe" href="login">
+                <a class="longe" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <input type="submit" class="btn btn-black" value="Log In">
+                </a>
+              
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <a class="dropdown-item" href="/customer_login">Buyer</a>
+                  <a class="dropdown-item" href="/supplier_login">Supplier</a>
+                  <a class="dropdown-item" href="/cashier_login">Cashier</a>
+                </div>
+            </a>
+            <!-- <a class="longe" href="login"><input type="submit" class="btn btn-black" value="Log In"></a> -->
+          </div>
+          
+          <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span
+              class="icon-menu"></span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="bg-light py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mb-0">
+            <a href="/">Home</a> <span class="mx-2 mb-0">/</span>
+            <strong class="text-black">Admin Log In</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="jumbotron">
+                <form action="/admin_login" method="post">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input name="username" type="email" class="form-control" placeholder="Email">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input name="password" type="password" class="form-control" placeholder="Password">
+                      </div>
+                      <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+            </div>
+            
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="bg-primary">
+        <%- include ("partials/footer.ejs") %>
+    </div>
+
+</div>
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

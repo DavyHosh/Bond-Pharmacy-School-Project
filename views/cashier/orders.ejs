@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Bond Pharmacy</title>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="description" content="Bluesky template project">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      
+      <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+
+      <link href="https://fonts.googleapis.com/css?family=Rubik:400,700|Crimson+Text:400,400i" rel="stylesheet">
+      <link rel="stylesheet" href="/fonts/icomoon/style.css">
+    
+      <link rel="stylesheet" href="/css/bootstrap.min.css">
+      <link rel="stylesheet" href="/css/magnific-popup.css">
+      <link rel="stylesheet" href="/css/jquery-ui.css">
+      <link rel="stylesheet" href="/css/owl.carousel.min.css">
+      <link rel="stylesheet" href="/css/owl.theme.default.min.css">
+    
+    
+      <link rel="stylesheet" href="/css/aos.css">
+    
+      <link rel="stylesheet" href="/css/style.css">
+      
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+      <!-- DATATABLES -->
+      <link rel="stylesheet" href="https://cdn.datatables.net/1.13.3/css/jquery.dataTables.min.css">
+
+      <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+      <script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
+        
+      <style>
+        .shorte {
+            display: none;
+            visibility: none;
+        }
+        @media (max-width: 991px) {
+          .longe {
+            display: none;
+          }
+          .shorte {
+            /* display: unset; */
+            visibility: visible;
+        }
+        }
+    </style>
+  
+  </head>
+
+<body>
+
+  <div class="site-wrap">
+
+      <%- include ("partials/header.ejs") %>
+
+      <div class="bg-light py-3">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 mb-0">
+              <strong class="text-black">Orders</strong><span class="mx-2 mb-0">/</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row" style="padding: 10px 0;">
+              <div class="col-md-6">
+                <h2>New Orders</h2>
+              </div>
+            </div>
+              <!-- Table -->
+              <table id="example" class="display">
+                <thead style="background-color: darkgray; color: rgb(131, 121, 121);">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Customer</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Cancel</th>
+                    <th scope="col">Accept</th>
+                  </tr>
+                </thead>
+                <tbody>
+      
+                  <% allOrders.forEach(function(item) { %>
+                    <tr>
+                      <td><%= item.id %></td>
+                      <td><%= item.fname %> <%= item.lname %></td>
+                      <td><%= item.title %></td>
+                      <td><%= item.amount %></td>
+                      <td><%= item.date.toDateString() %></td>
+                      <td>
+                        <a href="/cashier/<%= item.id %>/cancel_order"><button class="btn btn-outline-secondary" type="button">Cancel</button></a>
+                      </td>
+                      <td>
+                        <a href="/cashier/<%= item.id %>/accept_order"><button class="btn btn-outline-primary" type="button">Accept</button></a>
+                      </td>
+                    </tr>
+                  <% }); %>
+                              
+                              
+                </tbody>
+                  <tfoot style="background-color: darkgray; color: rgb(131, 121, 121);">
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Customer</th>
+                      <th scope="col">Product</th>
+                      <th scope="col">Amount</th>
+                      <th scope="col">Date</th>
+                      <th scope="col">Cancel</th>
+                      <th scope="col">Accept</th>
+                    </tr>
+                  </tfoot>
+              </table>
+            
+          </div>
+        </div>
+
+        <hr>
+
+        <!-- second row -->
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row" style="padding: 10px 0;">
+              <div class="col-md-6">
+                <h2>Customer Orders</h2>
+              </div>
+            </div>
+              <!-- Table -->
+              <table id="example2" class="display">
+                <thead style="background-color: darkgray; color: rgb(131, 121, 121);">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Customer</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Receipt</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <% allSales.forEach(function(item) { %>
+                    <tr>
+                      <td><%= item.id %></td>
+                      <td><%= item.fname %> <%= item.lname %></td>
+                      <td><%= item.title %></td>
+                      <td><%= item.amount %></td>
+                      <td><%= item.date.toDateString() %></td>
+                      <td><a href="/cashier/<%= item.id %>/receipt"><input type="submit" value="view receipt" class="btn btn-primary"></a></td>
+                    </tr>
+                  <% }); %>
+                              
+                              
+                </tbody>
+                  <tfoot style="background-color: darkgray; color: rgb(131, 121, 121);">
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Customer</th>
+                      <th scope="col">Product</th>
+                      <th scope="col">Amount</th>
+                      <th scope="col">Date</th>
+                      <th scope="col">Receipt</th>
+                    </tr>
+                  </tfoot>
+              </table>
+            
+          </div>
+          
+        </div>
+
+      </div>
+
+      <br>
+      <div class="bg-primary">
+          <%- include ("partials/footer.ejs") %>
+      </div>
+    
+  </div>
+
+  	<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script>
+      $(document).ready(function() {
+        $('#example').DataTable( {
+          "pagingType": "full_numbers"
+        } );
+      } );
+    </script>
+
+<script>
+  $(document).ready(function() {
+    $('#example2').DataTable( {
+      "pagingType": "full_numbers"
+    } );
+  } );
+</script>
+<!-- <script src="/js/jquery-3.3.1.min.js"></script> -->
+<script src="/js/jquery-ui.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
+<script src="/js/jquery.magnific-popup.min.js"></script>
+<script src="/js/aos.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<!-- DATATABLES -->
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
+
+</body>
+
+</html>

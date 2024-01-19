@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include ("partials/head.ejs") %>
+  </head>
+  <body>
+    <%- include ("partials/nav.ejs") %>
+
+    <header id="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10">
+            <h1><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Cashier <small>Add Cashier</small></h1>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="breadcrumb">
+      <div class="container">
+        <ol class="breadcrumb">
+          <li><a href="/admin/index">Dashboard</a></li>
+          <li> > </li>
+          <li class="active">Add Product</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="main">
+      <div class="container">
+        <div class="row">
+          
+          <%- include ("partials/sidebar.ejs") %>
+          
+          <div class="col-md-9">
+            <!-- Website Overview-->
+            <div class="panel panel-default">
+              <div class="panel-heading main-color-bg">
+                <h3 class="panel-title">Add Product</h3>
+              </div>
+
+              <div class="panel-body">
+                <div class="row">
+                    <% allProducts.forEach(function(item) { %>
+                    <div class="col-md-4">
+                        <div class="card" style="width: 18rem;">
+                            <img class="card-img-top" src="/uploads/<%= item.filename %>" width="200px" height="150px">
+                            <div class="card-body">
+                              <h5 class="card-title"><%= item.title %></h5>
+                              <p class="card-text"><%= item.price %></p>
+                              <a href="/admin/<%= item.id %>/edit_product" class="btn btn-warning">Edit</a> 
+                              <a href="/admin/<%= item.id %>/delete_product" class="btn btn-primary">Delete</a>
+                            </div>
+                          </div>
+                    </div>
+                    <% }); %>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <%- include ("partials/footer.ejs") %>
+
+</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>

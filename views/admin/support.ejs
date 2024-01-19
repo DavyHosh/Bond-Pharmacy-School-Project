@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include ("partials/head.ejs") %>
+  </head>
+  <body>
+    <%- include ("partials/nav.ejs") %>
+
+    <header id="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10">
+            <h1><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Support <small>Manage support area</small></h1>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="breadcrumb">
+      <div class="container">
+        <ol class="breadcrumb">
+          <li><a href="index">Dashboard</a></li>
+          <li> > </li>
+          <li class="active">Support</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="main">
+      <div class="container">
+        <div class="row">
+          
+          <%- include ("partials/sidebar.ejs") %>
+          
+          <div class="col-md-9">
+            <!-- Website Overview-->
+            <div class="panel panel-default">
+              <div class="panel-heading main-color-bg">
+                <h3 class="panel-title">Feedback</h3>
+              </div>
+              <div class="panel-body">
+                <br>
+                <table class="table table-striped table-hover">
+                  <tr>
+                    <th>Client</th>
+                    <th>message</th>
+                    <th></th>
+                  </tr>
+
+                  <% allMessages.forEach(function(item) { %>
+                    <tr>
+                      <td><%= item.fname %> <%= item.lname %> <br> <a href="mailto:<%= item.email %>"><%= item.email %></a></td>
+                      <td><%= item.message %></td>
+                      <td><a class="btn btn-danger" href="/admin/<%= item.id %>/delete_message">Delete</a></td>
+                    </tr>
+                  <% }); %>
+
+                </table>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+      <%- include ("partials/footer.ejs") %>
+
+    </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>
